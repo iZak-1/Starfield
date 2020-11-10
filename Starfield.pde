@@ -2,7 +2,7 @@ Star[] field;
 int numStars = 1000;
 float tailAmount = 10;
 void setup() {
-  size(1000, 1000); //size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
+  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
   field = new Star[numStars];
   for (int i=0; i<numStars; i++) {  
     field[i]=new Star();
