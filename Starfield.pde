@@ -3,7 +3,7 @@ int numStars = 1000;
 int numLinesToShow = 3;
 float shipSpeed=0.1;
 void setup() {
-  size(1000, 1000); //size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
+  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
   field = new Star[numStars];
   for (int i=0; i<numStars; i++) {  
     field[i]=new Star(width/2, height/2, (float)Math.random(), 2*PI*Math.random(), 1+2*(float)Math.random());
@@ -20,26 +20,11 @@ void draw() {
     field[i].show();
   }
   
-  
-  noFill();
-  stroke(100);
-  strokeWeight((width+height)/50);
-  polygon(width/2, height/2, (width+height)/2,6);
-  
+    
   fill(255);
   text(shipSpeed+ " Lightspeed", width/2, 0.9*height);
   
   
-}
-void polygon(float x, float y, float radius, int npoints) {
-  float angle = TWO_PI / npoints;
-  beginShape();
-  for (float a = 0; a < TWO_PI; a += angle) {
-    float sx = x + cos(a) * radius;
-    float sy = y + sin(a) * radius;
-    vertex(sx, sy);
-  }
-  endShape(CLOSE);
 }
 
 
